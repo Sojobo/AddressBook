@@ -6,21 +6,77 @@
 
 <table class="table table-striped table-hover" id="contactList">
 	<cfoutput query="getContact">
-		<tr>
-			<td>
-				<h4 class="glyphicon glyphicon-user"></h4>
-			</td>
-			<td class="align-baseline">
-				#getContact.first_name# #getContact.second_name#
-			</td> 
-		</tr>
-		<tr>
-			<td>
-				<h4 class="glyphicon glyphicon-earphone"></h4>
-			</td>
-			<td class="align-baseline">
-				#getContact.phone_mobile#
-			</td> 
-		</tr>
+		<cfif len(first_name) or len(second_name)>
+			<tr>
+				<td>
+					<h4 class="glyphicon glyphicon-user"></h4>
+				</td>
+				<td class="align-baseline">
+					#first_name# #second_name#
+				</td>
+			</tr>
+		</cfif>
+		<cfif len(phone_mobile)>
+			<tr>
+				<td>
+					<h4 class="glyphicon glyphicon-phone"></h4>
+				</td>
+				<td class="align-baseline">
+					#phone_mobile#
+				</td>
+			</tr>
+		</cfif>
+		<cfif len(phone_home)>
+			<tr>
+				<td>
+					<h4 class="glyphicon glyphicon-phone-alt"></h4>
+				</td>
+				<td class="align-baseline">
+					#phone_home#
+				</td>
+			</tr>
+		</cfif>
+		<cfif len(phone_work)>
+			<tr>
+				<td>
+					<h4 class="glyphicon glyphicon-briefcase"></h4>
+				</td>
+				<td class="align-baseline">
+					#phone_work#
+				</td>
+			</tr>
+		</cfif>
+		<cfif len(email)>
+			<tr>
+				<td>
+					<h4 class="glyphicon glyphicon-envelope"></h4>
+				</td>
+				<td class="align-baseline">
+					#email#
+				</td>
+			</tr>
+		</cfif>
+		<cfif len(address) or len(postcode)>
+			<tr>
+				<td>
+					<h4 class="glyphicon glyphicon-globe"></h4>
+				</td>
+				<td class="align-baseline">
+					#address# <br>
+					#postcode#
+				</td>
+			</tr>
+		</cfif>
+		<cfif len(birthday)>
+			<tr>
+				<td>
+					<h4 class="glyphicon glyphicon-calendar"></h4>
+				</td>
+				<td class="align-baseline">
+					#dateTimeFormat(birthday, "dd-mm-yy")#
+				</td>
+			</tr>
+		</cfif>
+
 	</cfoutput>
 </table>
