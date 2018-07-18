@@ -7,41 +7,36 @@
 		<title>AddressBook - CF</title>
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		</head>
+		<cfquery name="getContacts" datasource="addressbookcf">
+		    SELECT * FROM contacts
+		    ORDER BY first_name ASC
+		</cfquery>
+	</head>
 	<body>
-		<div class="container col-md-4">
-			<div class="panel panel-default">
+		<div class="container mx-auto " style="width: 400px;">
+			<div class="panel panel-primary ">
 				<!-- Default panel contents -->
-				<div class="panel-heading">Address book</div>
+				<div class="panel-heading">
+					Address book
+					<div class="btn-group pull-right">
+						<button type="button" class="btn btn-default" aria-label="Right Align">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						</button>
+						<button type="button" class="btn btn-default" aria-label="Right Align">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						</button>
+					</div>
+				</div>
 
 				<!-- Table -->
 				<table class="table">
-					<tr>
-						<th>Firstname</th>
-						<th>Lastname</th> 
-						<th>Age</th>
-						<td></td>
-					</tr>
-					<tr>
-						<td>bob</td>
-						<td>jones</td> 
-						<td>62</td>
-						<td><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
-					</tr>
-					<tr>
-						<td>bob</td>
-						<td>smith</td> 
-						<td>54</td>
-						<td><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
-					</tr>
-					<tr>
-						<td>barbara</td>
-						<td>streisand</td> 
-						<td>76</td> 
-						<td><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
-					</tr>
+					<cfoutput query="getContacts">
+						<tr>
+							<td>B</td>
+							<td>#getContacts.first_name# #getContacts.second_name#</td> 
+						</tr>
+					</cfoutput>
 				</table>
-				<button type="button" class="btn btn-success btn-block">Add Contact</button>
 			</div>
 		</div>
 		<!-- Bootstrap JS -->
