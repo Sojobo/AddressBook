@@ -12,11 +12,6 @@
 		<!-- Bootstrap JS -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		
-		<cfquery name="getContacts" datasource="addressbookcf">
-		    SELECT * FROM contacts
-		    ORDER BY first_name ASC
-		</cfquery>
-
 		<script>
 			$(document).ready(function(){
 				$("#searchBar").on("keyup", function() {
@@ -29,17 +24,29 @@
 					$("#searchBar").toggleClass("hide");
 					$("#searchBar").focus();
 				});
+				$(".contact").on("click", function(event) {
+					var html = $.ajax({
+						url: "contact.cfm?uid=" + $(this).attr("id"),
+						cache: false
+					})
+					.done(function(html) {
+						$('#contentWindow').fadeOut(200, function () {
+							$('#contentWindow').html(html);
+							$('#contentWindow').fadeIn(200);
+						});
+					});
+				});
 			});
 		</script>
 	</head>
 	<body>
 		<div class="container mx-auto " style="width: 450px;">
 			<div class="panel panel-primary ">
-				<div class="panel-heading">
-					Address book
+				<div class="panel-heading" style="height: 50px;">
+					Contacts
 					<div class="btn-group pull-right">
 						<form class="form-inline">
-					    	<input id="searchBar" class="hide form-control mr-sm-2" type="search" placeholder="Search">
+							<input id="searchBar" class="hide form-control mr-sm-2" type="search" placeholder="Search">
 							<button id="searchButton" type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-search"></span>
 							</button>
@@ -49,21 +56,9 @@
 						</form>
 					</div>
 				</div>
-
-				<table class="table" id="contactList">
-					<cfset lastLetter = "">
-					<cfoutput query="getContacts">
-						<cfset contactLetter = Left(getContacts.first_name, 1)>
-						<tr>
-							<td class="text-primary text-capitalize">
-								<!-- We only want to show the first instance of each letter -->
-								<cfif lastLetter neq contactLetter>#contactLetter#</cfif>
-							</td>
-							<td>#getContacts.first_name# #getContacts.second_name#</td> 
-						</tr>
-						<cfset lastLetter = contactLetter>
-					</cfoutput>
-				</table>
+				<div id="contentWindow">
+					<cfinclude template = "contacts.cfm">
+				</div>
 			</div>
 		</div>
 	</body>
