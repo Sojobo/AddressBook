@@ -6,12 +6,21 @@
 
 <table class="table table-striped table-hover" id="contactList">
 	<cfoutput query="getContact">
-		<cfset contactLetter = Left(getContact.first_name, 1)>
 		<tr>
-			<td class="text-primary text-capitalize">
+			<td>
+				<h4 class="glyphicon glyphicon-user"></h4>
 			</td>
-			<td>#getContact.first_name# #getContact.second_name#</td> 
+			<td class="align-baseline">
+				#getContact.first_name# #getContact.second_name#
+			</td> 
 		</tr>
-		<cfset lastLetter = contactLetter>
+		<tr>
+			<td>
+				<h4 class="glyphicon glyphicon-earphone"></h4>
+			</td>
+			<td class="align-baseline">
+				#getContact.phone_mobile#
+			</td> 
+		</tr>
 	</cfoutput>
 </table>

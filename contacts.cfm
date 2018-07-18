@@ -7,7 +7,7 @@
 	<cfset lastLetter = "">
 	<cfoutput query="getContacts">
 		<cfset contactLetter = Left(getContacts.first_name, 1)>
-		<tr id="#getContacts.uid#" class="contact">
+		<tr id="#getContacts.uid#" onclick="contactPressed('#getContacts.uid#','#getContacts.first_name#')">
 			<td class="text-primary text-capitalize">
 				<!-- We only want to show the first instance of each letter -->
 				<cfif lastLetter neq contactLetter>#contactLetter#</cfif>
