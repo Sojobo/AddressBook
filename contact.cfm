@@ -11,7 +11,7 @@
 				<td>
 					<h4 class="glyphicon glyphicon-user"></h4>
 				</td>
-				<td class="align-baseline">
+				<td>
 					#first_name# #second_name#
 				</td>
 			</tr>
@@ -21,7 +21,7 @@
 				<td>
 					<h4 class="glyphicon glyphicon-phone"></h4>
 				</td>
-				<td class="align-baseline">
+				<td>
 					#phone_mobile#
 				</td>
 			</tr>
@@ -31,7 +31,7 @@
 				<td>
 					<h4 class="glyphicon glyphicon-phone-alt"></h4>
 				</td>
-				<td class="align-baseline">
+				<td>
 					#phone_home#
 				</td>
 			</tr>
@@ -41,7 +41,7 @@
 				<td>
 					<h4 class="glyphicon glyphicon-briefcase"></h4>
 				</td>
-				<td class="align-baseline">
+				<td>
 					#phone_work#
 				</td>
 			</tr>
@@ -51,7 +51,7 @@
 				<td>
 					<h4 class="glyphicon glyphicon-envelope"></h4>
 				</td>
-				<td class="align-baseline">
+				<td>
 					#email#
 				</td>
 			</tr>
@@ -61,7 +61,7 @@
 				<td>
 					<h4 class="glyphicon glyphicon-globe"></h4>
 				</td>
-				<td class="align-baseline">
+				<td>
 					#address# <br>
 					#postcode#
 				</td>
@@ -72,7 +72,7 @@
 				<td>
 					<h4 class="glyphicon glyphicon-calendar"></h4>
 				</td>
-				<td class="align-baseline">
+				<td>
 					#dateTimeFormat(birthday, "dd-mm-yy")#
 				</td>
 			</tr>

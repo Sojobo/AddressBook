@@ -20,9 +20,9 @@ function backButtonPressed() {
 		cache: false
 	})
 	.done(function(html) {
-		$('#contentWindow').fadeOut(200, function () {
-			$('#contentWindow').html(html);
-			$('#contentWindow').fadeIn(200);
+		$("#contentWindow").fadeOut(200, function () {
+			$("#contentWindow").html(html);
+			$("#contentWindow").fadeIn(200);
 		});
 	});
 	var headerhtml = $.ajax({
@@ -30,7 +30,7 @@ function backButtonPressed() {
 		cache: false
 	})
 	.done(function(headerhtml) {
-		$('#contentHeader').html(headerhtml);
+		$("#contentHeader").html(headerhtml);
 	});
 }
 
@@ -40,9 +40,9 @@ function contactPressed(id, name) {
 		cache: false
 	})
 	.done(function(html) {
-		$('#contentWindow').fadeOut(200, function () {
-			$('#contentWindow').html(html);
-			$('#contentWindow').fadeIn(200);
+		$("#contentWindow").fadeOut(200, function () {
+			$("#contentWindow").html(html);
+			$("#contentWindow").fadeIn(200);
 		});
 	});
 	var headerhtml = $.ajax({
@@ -50,6 +50,26 @@ function contactPressed(id, name) {
 		cache: false
 	})
 	.done(function(headerhtml) {
-		$('#contentHeader').html(headerhtml);
+		$("#contentHeader").html(headerhtml);
+	});
+}
+
+function addContactPressed() {
+	var html = $.ajax({
+		url: "addcontact.cfm",
+		cache: false
+	})
+	.done(function(html) {
+		$("#contentWindow").fadeOut(200, function () {
+			$("#contentWindow").html(html);
+			$("#contentWindow").fadeIn(200);
+		});
+	});
+	var headerhtml = $.ajax({
+		url: "header_addcontact.cfm",
+		cache: false
+	})
+	.done(function(headerhtml) {
+		$("#contentHeader").html(headerhtml);
 	});
 }
