@@ -73,7 +73,7 @@
 					<h4 class="glyphicon glyphicon-calendar"></h4>
 				</td>
 				<td>
-					#dateTimeFormat(birthday, "dd-mm-yy")#
+					#DateFormat(birthday, "dd/mm/yyyy")#
 				</td>
 			</tr>
 		</cfif>

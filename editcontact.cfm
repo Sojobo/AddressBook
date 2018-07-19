@@ -72,7 +72,7 @@
 					<h4 class="glyphicon glyphicon-calendar"></h4>
 				</td>
 				<td>
-					<input name="birthday" id="birthday" type="text" class="form-control mr-sm-2" placeholder="Birthday" value="#birthday#">
+					<input name="birthday" id="birthday" type="text" class="form-control mr-sm-2" placeholder="Birthday" autocomplete="off" value="#DateFormat(birthday, "dd/mm/yyyy")#">
 				</td>
 			</tr>
 			<tr>

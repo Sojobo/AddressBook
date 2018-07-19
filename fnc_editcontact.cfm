@@ -9,7 +9,7 @@
 	phone_work = <cfqueryparam value="#form.phone_work#" CFSQLType="cf_sql_varchar" null="#NOT len(trim(form.phone_work))#">,
 	phone_mobile = <cfqueryparam value="#form.phone_mobile#" CFSQLType="cf_sql_varchar" null="#NOT len(trim(form.phone_mobile))#">,
 	email = <cfqueryparam value="#form.email#" CFSQLType="cf_sql_varchar" null="#NOT len(trim(form.email))#">,
-	birthday = <cfqueryparam value="#form.birthday#" CFSQLType="cf_sql_timestamp" null="#NOT len(trim(form.birthday))#">
+	birthday = <cfqueryparam value="#form.birthday#" CFSQLType="cf_sql_varchar" null="#NOT len(trim(form.birthday))#">
 	WHERE uid = <cfqueryparam value="#url.uid#" CFSQLType="cf_sql_integer">
 </cfquery>
 
