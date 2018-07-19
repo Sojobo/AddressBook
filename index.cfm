@@ -14,15 +14,22 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="main.js"></script>
+
+		<cfset header = "header_contacts.cfm">
+		<cfset content = "contacts.cfm">
+		<cfif IsDefined("url.view")>
+			<cfset header = "header_#url.view#.cfm">
+			<cfset content = "#url.view#.cfm">
+		</cfif>
 	</head>
 	<body>
 		<div class="container mx-auto " style="width: 450px;">
 			<div class="panel panel-primary ">
 				<div id="contentHeader" class="panel-heading" style="height: 50px;">
-					<cfinclude template = "header_contacts.cfm">
+					<cfinclude template = #header#>
 				</div>
 				<div id="contentWindow">
-					<cfinclude template = "contacts.cfm">
+					<cfinclude template = #content#>
 				</div>
 			</div>
 		</div>

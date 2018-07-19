@@ -46,7 +46,7 @@ function contactPressed(id, name) {
 		});
 	});
 	var headerhtml = $.ajax({
-		url: "header_contact.cfm?name=" + name,
+		url: "header_contact.cfm?name=" + name + "&uid=" + id,
 		cache: false
 	})
 	.done(function(headerhtml) {
@@ -57,6 +57,26 @@ function contactPressed(id, name) {
 function addContactPressed() {
 	var html = $.ajax({
 		url: "addcontact.cfm",
+		cache: false
+	})
+	.done(function(html) {
+		$("#contentWindow").fadeOut(200, function () {
+			$("#contentWindow").html(html);
+			$("#contentWindow").fadeIn(200);
+		});
+	});
+	var headerhtml = $.ajax({
+		url: "header_addcontact.cfm",
+		cache: false
+	})
+	.done(function(headerhtml) {
+		$("#contentHeader").html(headerhtml);
+	});
+}
+
+function editContactPressed(id) {
+	var html = $.ajax({
+		url: "editcontact.cfm?uid=" + id,
 		cache: false
 	})
 	.done(function(html) {

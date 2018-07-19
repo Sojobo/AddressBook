@@ -1,6 +1,6 @@
 <cfquery name="getContact" datasource="addressbookcf">
 	SELECT * FROM contacts
-	WHERE uid = #url.uid#
+	WHERE uid = <cfqueryparam value="#url.uid#" CFSQLType="cf_sql_integer">
 	LIMIT 1
 </cfquery>
 
@@ -59,7 +59,7 @@
 		<cfif len(address) or len(postcode)>
 			<tr>
 				<td>
-					<h4 class="glyphicon glyphicon-globe"></h4>
+					<h4 class="glyphicon glyphicon-home"></h4>
 				</td>
 				<td>
 					#address# <br>
