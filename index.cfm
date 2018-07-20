@@ -16,7 +16,9 @@
 		<script src="main.js"></script>
 
 		<style type="text/css">
-			tr { cursor: pointer }
+			#contactList tr { cursor: pointer }
+			.table > tbody > tr > td { vertical-align: baseline; }
+			.table .glyphicon { padding: 0 5px 0 10px }
 		</style>
 
 		<cfset header = "header_contacts.cfm">

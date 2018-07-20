@@ -9,7 +9,7 @@
 	});
 </script>
 <form class="form-inline" action="fnc_addcontact.cfm" method="post">
-	<table class="table table-striped table-hover" id="contactList">
+	<table class="table table-striped table-hover" id="contactCreate">
 		<tr>
 			<td>
 				<h4 class="glyphicon glyphicon-user"></h4>

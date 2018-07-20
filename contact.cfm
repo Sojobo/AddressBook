@@ -4,7 +4,7 @@
 	LIMIT 1
 </cfquery>
 
-<table class="table table-striped table-hover" id="contactList">
+<table class="table table-striped table-hover" id="contactInfo">
 	<cfoutput query="getContact">
 		<cfif len(first_name) or len(second_name)>
 			<tr>

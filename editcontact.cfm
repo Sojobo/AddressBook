@@ -16,7 +16,7 @@
 </script>
 <cfoutput query="getContact">
 	<form class="form-inline" action="fnc_editcontact.cfm?uid=#uid#" method="post">
-		<table class="table table-striped table-hover" id="contactList">
+		<table class="table table-striped table-hover" id="contactEdit">
 			<tr>
 				<td>
 					<h4 class="glyphicon glyphicon-user"></h4>
