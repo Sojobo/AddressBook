@@ -60,7 +60,7 @@
 					<h4 class="glyphicon glyphicon-envelope"></h4>
 				</td>
 				<td>
-					<input name="email" class="form-control mr-sm-2" type="text" placeholder="Email" value="#email#">
+					<input name="email" class="form-control mr-sm-2" type="email" placeholder="Email" value="#email#">
 				</td>
 			</tr>
 			<tr>
