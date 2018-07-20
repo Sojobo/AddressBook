@@ -4,12 +4,13 @@
 	LIMIT 1
 </cfquery>
 
-<table class="table table-striped table-hover" id="contactInfo">
+<table class="table table-striped table-hover" id="contactInfo" style="position: relative">
 	<cfoutput query="getContact">
 		<cfif len(first_name) or len(second_name)>
 			<tr>
 				<td>
 					<h4 class="glyphicon glyphicon-user"></h4>
+					<img src="https://www.gravatar.com/avatar/#lcase(Hash(lcase(email)))#?s=100&d=mp" style="border-radius: 50%; position: absolute; right: 10px" />
 				</td>
 				<td>
 					#first_name# #second_name#

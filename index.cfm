@@ -18,14 +18,18 @@
 		<style type="text/css">
 			#contactList tr { cursor: pointer }
 			.table > tbody > tr > td { vertical-align: baseline; }
-			.table .glyphicon { padding: 0 5px 0 10px }
+			.table .glyphicon { padding: 0 5px 0 15px }
 		</style>
 
 		<cfset header = "header_contacts.cfm">
 		<cfset content = "contacts.cfm">
 		<cfif IsDefined("url.view")>
-			<cfset header = "header_#url.view#.cfm">
 			<cfset content = "#url.view#.cfm">
+			<cfif url.view eq "error">
+				<cfset header = "header_addcontact.cfm">
+			<cfelse>
+				<cfset header = "header_#url.view#.cfm">
+			</cfif>
 		</cfif>
 	</head>
 	<body>
