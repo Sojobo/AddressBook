@@ -77,10 +77,12 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<button type="button" class="btn btn-danger" onclick="backButtonPressed()">Cancel</button>
 					<button type="submit" class="btn btn-success pull-right">Save</button>
+					</form>
+					<form class="form-inline" action="fnc_removecontact.cfm?uid=#uid#" method="post">
+						<button type="submit" class="btn btn-danger">Delete</button>
+					</form>
 				</td>
 			</tr>
 		</table>
-	</form>
 </cfoutput>

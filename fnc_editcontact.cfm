@@ -1,5 +1,5 @@
 <cfparam name = "form.birthday" default = "NULL"> 
-<cfquery name="addContact" datasource="addressbookcf">
+<cfquery name="editContact" datasource="addressbookcf">
 	UPDATE contacts
 	SET first_name = <cfqueryparam value="#form.first_name#" CFSQLType="cf_sql_varchar" null="#NOT len(trim(form.first_name))#">,
 	second_name = <cfqueryparam value="#form.second_name#" CFSQLType="cf_sql_varchar" null="#NOT len(trim(form.second_name))#">,
