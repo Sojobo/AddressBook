@@ -7,7 +7,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2018-07-20 01:33:02
+Date: 2018-07-20 11:42:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,7 +28,7 @@ CREATE TABLE `contacts` (
   `email` varchar(255) DEFAULT NULL,
   `birthday` varchar(55) DEFAULT NULL,
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of contacts
@@ -37,8 +37,6 @@ INSERT INTO `contacts` VALUES ('1', 'Aaron', 'Marshall', '100 Potato Avenue', 'L
 INSERT INTO `contacts` VALUES ('4', 'Kelly', null, '12 Lorem Ipsum', 'LR5 9XT', null, null, null, 'brandyzomb@gmail.com', null);
 INSERT INTO `contacts` VALUES ('5', 'Kevin', null, null, null, null, null, null, 'ipodude500@gmail.com', null);
 INSERT INTO `contacts` VALUES ('6', 'Joe', 'Matthews', null, null, null, null, null, 'joewalton001@gmail.com', null);
-INSERT INTO `contacts` VALUES ('8', 'Ben', 'McDonald', null, null, null, null, null, null, null);
 INSERT INTO `contacts` VALUES ('9', 'Ben', 'Roper', '64 Glasgow Road', 'DG1 1GH', null, null, null, 'northernshadow@hotmail.com', null);
-INSERT INTO `contacts` VALUES ('10', 'Connery', 'Marshall', null, null, null, null, null, null, null);
 INSERT INTO `contacts` VALUES ('14', 'Johan', null, null, null, null, null, null, 'johan.sjuol@gmail.com', null);
 INSERT INTO `contacts` VALUES ('16', 'Test', 'McTestington', null, null, null, null, null, 'Gaming5764@gmail.com', '2018-09-07');
