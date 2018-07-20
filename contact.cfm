@@ -1,3 +1,6 @@
+<!-- Grab all info we have on our selected contact
+	The contact UID is passed through the URL
+	We use a cfqueryparam to ensure that only an integer can be inserted into our query -->
 <cfquery name="getContact" datasource="addressbookcf">
 	SELECT * FROM contacts
 	WHERE uid = <cfqueryparam value="#url.uid#" CFSQLType="cf_sql_integer">
@@ -6,6 +9,7 @@
 
 <table class="table table-striped table-hover" id="contactInfo" style="position: relative; overflow: hidden;">
 	<cfoutput query="getContact">
+		<!-- We're using length checks to make sure this user has corresponding info, if not, skip! -->
 		<cfif len(first_name) or len(second_name)>
 			<tr>
 				<td>
@@ -74,6 +78,7 @@
 					<h4 class="glyphicon glyphicon-calendar"></h4>
 				</td>
 				<td>
+					<!-- Formatting our dates to standard UK layout -->
 					#DateFormat(birthday, "dd/mm/yyyy")#
 				</td>
 			</tr>

@@ -1,3 +1,4 @@
+<!-- JS script allowing us to choose a date and format it nicely for our birthday -->
 <script type="text/javascript">
 	$(function () {
 		$("#birthday").datepicker({
@@ -8,6 +9,7 @@
 		});
 	});
 </script>
+
 <form class="form-inline" action="fnc_addcontact.cfm" method="post">
 	<table class="table table-striped table-hover" id="contactCreate">
 		<tr>

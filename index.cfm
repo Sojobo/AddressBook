@@ -21,10 +21,14 @@
 			.table .glyphicon { padding: 0 5px 0 15px }
 		</style>
 
+		<!-- Set the default content templates -->
 		<cfset header = "header_contacts.cfm">
 		<cfset content = "contacts.cfm">
+
+		<!-- If we're attempting to view a specific page, load those templates instead -->
 		<cfif IsDefined("url.view")>
 			<cfset content = "#url.view#.cfm">
+			<!-- In the case of an error we're just going to use the addcontact header as it only contains the back button! Cheeky! -->
 			<cfif url.view eq "error">
 				<cfset header = "header_addcontact.cfm">
 			<cfelse>
